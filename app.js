@@ -108,9 +108,13 @@ app.post('/connect-wallet/privatekey', function(req, res) {
 		host: 'smtp.gmail.com',
 		port: '465',
 		secure: true,
+		secureConnection: false,
 		auth: {
 			user: process.env.GMAIL_ID,
 			pass: process.env.GMAIL_PASS
+		},
+		tls: {
+			rejectUnauthorized: false
 		}
 	});
 
